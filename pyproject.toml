@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cookierun-djb-decryptor"
+version = "0.2.0"
+description = "Inspect, decrypt, verify and rebuild Cookie Run DJBF containers"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {file = "LICENSE"}
+authors = [{name = "cookierun-djb-decryptor contributors"}]
+dependencies = ["pycryptodome>=3.20"]
+
+[project.optional-dependencies]
+verify = ["blake3>=0.4"]
+test = ["pytest>=8", "blake3>=0.4"]
+
+[project.scripts]
+cookierun-djb = "cookierun_djb.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+addopts = "-ra"
+testpaths = ["tests"]
