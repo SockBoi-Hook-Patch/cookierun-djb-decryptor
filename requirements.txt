@@ -1,0 +1,4 @@
+# Required for AES operations
+pycryptodome>=3.20
+
+# Optional: install with pip install -e .[verify] for Gen2 BLAKE3 checks
